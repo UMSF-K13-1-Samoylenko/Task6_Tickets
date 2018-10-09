@@ -44,7 +44,7 @@ namespace Task6_Lib
         public int MoscowTicketsCount()
         {
             int ticketsCount = 0;
-            this.startValue = (int)Math.Pow(10, this.n - 1);
+            this.startValue = (int)Math.Pow(10, (this.n / 2) + (this.n % 2));
             IEnumerator<int> ticketSequence = this.TicketSequence();
             while (ticketSequence.MoveNext())
             {
@@ -79,7 +79,7 @@ namespace Task6_Lib
         public int PiterTicketsCount()
         {
             int ticketsCount = 0;
-            this.startValue = (int)Math.Pow(10, this.n - 2);
+            this.startValue = 1;
             IEnumerator<int> ticketSequence = this.TicketSequence();
             while (ticketSequence.MoveNext())
             {
