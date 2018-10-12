@@ -20,11 +20,11 @@ namespace Task6_UnitTests
         /// <param name="expected">Expected count of lucky tickets</param>
         [DataTestMethod]
         [DataRow(2, 9)]// 11,22,33,44..
-        [DataRow(3, 45)]
+        [DataRow(3, 99)]
         public void MocowTicketsTests(int n, int expected)
         {
-            Tickets tickets = new Tickets(n);
-            Assert.AreEqual(expected, tickets.MoscowTicketsCount());
+            TicketSequence ticketSequence = MoscowTicketSequence.Initialize(n);
+            Assert.AreEqual(expected, ticketSequence.GetLuckyTicketsCount());
         }
 
         /// <summary>
@@ -37,8 +37,8 @@ namespace Task6_UnitTests
         [DataRow(3, 54)]
         public void PiterTicketsTests(int n, int expected)
         {
-            Tickets tickets = new Tickets(n);
-            Assert.AreEqual(expected, tickets.PiterTicketsCount());
+            TicketSequence ticketSequence = PiterTicketSequence.Initialize(n);
+            Assert.AreEqual(expected, ticketSequence.GetLuckyTicketsCount());
         }
     }
 }

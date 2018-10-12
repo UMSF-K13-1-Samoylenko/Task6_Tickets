@@ -4,6 +4,9 @@
 
 namespace Task6_UI
 {
+    using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// Main class
     /// </summary>

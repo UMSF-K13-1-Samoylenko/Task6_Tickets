@@ -57,24 +57,27 @@ namespace Task6_UI
                         {
                             TicketsType ticketsType = this.GetTicketsType(args[1]);
 
-                            Tickets tickets = new Tickets(this.n);
+                            TicketSequence tickets;
                             switch (ticketsType)
                             {
                                 case TicketsType.Moscow:
                                 {
-                                    Console.WriteLine(tickets.MoscowTicketsCount());
+                                    tickets = MoscowTicketSequence.Initialize(this.n);
                                     break;
                                 }
 
                                 case TicketsType.Piter:
                                 {
-                                    Console.WriteLine(tickets.PiterTicketsCount());
+                                    tickets = PiterTicketSequence.Initialize(this.n);
                                     break;
                                 }
 
                                 default:
+                                    tickets = null;
                                     break;
                             }
+
+                            Console.WriteLine(tickets.GetLuckyTicketsCount());
                         }
                         catch (ArgumentException ex)
                         {
